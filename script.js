@@ -7,8 +7,11 @@ for (let i = 0; i< 272; i++){
 }
 
 addEventListener("mouseover", (event) =>{
-    event.target.style.backgroundColor = "red"
-    console.log(event.target)
+    if(event.target.className == "grid-square"){
+        event.target.style.backgroundColor = "red"    
+    }
+    
+    console.log(event.target.className)
 
     // addEventListener("mouseover", (event) =>{
     //     event.target.style.backgroundColor = "red";
