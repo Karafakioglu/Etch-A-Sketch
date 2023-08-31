@@ -1,28 +1,36 @@
 const gridContainer = document.getElementById("grid-container")
+let colorRGB = "#B04C4C"  
+let numberOfGrids = 10;
 
-for (let i = 0; i< 272; i++){
-    let div = document.createElement("div");
-    div.classList = "grid-square"
-    gridContainer.appendChild(div)
+function generateGrid(numberOfGrids){
+
+    let squareSize = 700/numberOfGrids;
+    for (let i = 0; i< numberOfGrids*numberOfGrids; i++){
+        let div = document.createElement("div");
+        div.classList = "grid-square";
+        div.style.width = `${squareSize}px`;
+        div.style.height = `${squareSize}px`;
+        gridContainer.appendChild(div)
+        
+    }
 }
 
-function colorGridOnHover(){
+
+function changeSquareColor(colorInput){
     let isMousedClicked = false;
 
     gridContainer.addEventListener("click", (event) =>{
         isMousedClicked = !isMousedClicked
 
-
         addEventListener("mouseover", (event) =>{
             if(isMousedClicked){
                 if(event.target.className == "grid-square"){
-                    event.target.style.backgroundColor = "red"    
+                    event.target.style.backgroundColor = colorInput; 
                 }
             }
-
         })
-
     })    
 }
 
-colorGridOnHover()
+generateGrid(numberOfGrids)
+changeSquareColor(colorRGB)

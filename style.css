@@ -1,6 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #grid-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 700px;
 }
 .grid-square{
     width: 25px;
@@ -8,9 +20,6 @@
     border: 1px solid black;
 }
 
-
-#grid-container>.grid-square:nth-child(17n){
-    width: 100%;
-    border: 0;
-    height: 0;
+.grid-square:hover{
+    cursor: pointer;
 }
