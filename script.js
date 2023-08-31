@@ -6,16 +6,23 @@ for (let i = 0; i< 272; i++){
     gridContainer.appendChild(div)
 }
 
-addEventListener("mouseover", (event) =>{
-    if(event.target.className == "grid-square"){
-        event.target.style.backgroundColor = "red"    
-    }
-    
-    console.log(event.target.className)
+function colorGridOnHover(){
+    let isMousedClicked = false;
 
-    // addEventListener("mouseover", (event) =>{
-    //     event.target.style.backgroundColor = "red";
-    // })
+    gridContainer.addEventListener("click", (event) =>{
+        isMousedClicked = !isMousedClicked
 
-})
 
+        addEventListener("mouseover", (event) =>{
+            if(isMousedClicked){
+                if(event.target.className == "grid-square"){
+                    event.target.style.backgroundColor = "red"    
+                }
+            }
+
+        })
+
+    })    
+}
+
+colorGridOnHover()
