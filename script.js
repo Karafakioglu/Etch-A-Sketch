@@ -1,4 +1,5 @@
-const gridContainer = document.getElementById("grid-container")
+const gridContainer = document.getElementById("grid-container");
+const cleanBtn = document.getElementById("clear");
 let colorRGB = "#B04C4C"  
 let numberOfGrids = 20;
 
@@ -31,5 +32,15 @@ function changeSquareColor(colorInput){
     })    
 }
 
+function getSettings(){
+let squares = document.querySelectorAll(".grid-square")
+    cleanBtn.addEventListener("click", function(){
+        squares.forEach(square =>{
+            square.style.backgroundColor = "white"
+        })
+    })
+}
+
 generateGrid(numberOfGrids)
 changeSquareColor(colorRGB)
+getSettings();
