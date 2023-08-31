@@ -1,2 +1,2 @@
 # Etch-A-Sketch
-Project for TheOdinProject
+This is Project for TheOdinProject
