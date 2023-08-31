@@ -1,10 +1,19 @@
 *{
     box-sizing: border-box;
 }
+
+.title{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 80px;
+    text-align: center;
+    margin: 50px;
+    
+}
 .main{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 #grid-container{
     display: flex;
@@ -13,6 +22,10 @@
     align-items: center;
     width: 700px;
     height: 700px;
+    border: 15px solid rgb(127, 167, 174);
+    box-sizing: content-box;
+    
+
 }
 .grid-square{
     width: 25px;
@@ -22,4 +35,10 @@
 
 .grid-square:hover{
     cursor: pointer;
+}
+
+.settings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

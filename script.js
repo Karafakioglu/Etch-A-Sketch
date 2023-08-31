@@ -1,10 +1,9 @@
 const gridContainer = document.getElementById("grid-container")
 let colorRGB = "#B04C4C"  
-let numberOfGrids = 10;
+let numberOfGrids = 20;
 
 function generateGrid(numberOfGrids){
-
-    let squareSize = 700/numberOfGrids;
+let squareSize = 700/numberOfGrids;
     for (let i = 0; i< numberOfGrids*numberOfGrids; i++){
         let div = document.createElement("div");
         div.classList = "grid-square";
