@@ -29,23 +29,6 @@ let squareSize = 700/numberOfGrids;
     }
 }
 
-
-function changeSquareColor(colorInput){
-    let isMousedClicked = false;
-
-    gridContainer.addEventListener("click", (event) =>{
-        isMousedClicked = !isMousedClicked
-
-        addEventListener("mouseover", (event) =>{
-            if(isMousedClicked){
-                if(event.target.className == "grid-square"){
-                    event.target.style.backgroundColor = colorInput; 
-                }
-            }
-        })
-    })    
-}
-
 function getGridSize(){
     const gridSlider = document.getElementById("grid-number-slider");
     const gridSizeDisplay = document.getElementById("grid-size-display");
@@ -58,6 +41,33 @@ function getGridSize(){
     })
 }
 
+
+function changeSquareColor(colorInput){
+        gridContainer.addEventListener("mouseover", (event) =>{
+                if(event.target.className == "grid-square"){
+                    event.target.style.backgroundColor = colorInput; 
+                }
+        })
+}
+
+
+function decisionMaking(){
+
+    colorPicker.addEventListener("input", (event) =>{
+        changeSquareColor(event.target.value);
+    })
+
+    rainbowBtn.addEventListener("click", function(){
+        gridContainer.addEventListener("mouseover", (event) =>{
+            let randomColor = randomColorGenerator();
+            if(event.target.className == "grid-square"){
+                event.target.style.backgroundColor = randomColor; 
+            }
+        })
+    })
+
+}
+
 function clearCanvas(){
     cleanBtn.addEventListener("click", function () {
         let squares = document.querySelectorAll(".grid-square");
@@ -67,20 +77,11 @@ function clearCanvas(){
     });
 }
 
-function userSelectedColor(){
-    colorPicker.addEventListener("input", (event)=>{
-        changeSquareColor(event.target.value)
-    })
-}
 
 
 
-
-
-init();
 getGridSize();
 randomColorGenerator();
 clearCanvas();
-userSelectedColor();
+decisionMaking();
 
-//add random note
