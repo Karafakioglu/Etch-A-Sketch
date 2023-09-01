@@ -1,8 +1,9 @@
 const gridContainer = document.getElementById("grid-container");
 const cleanBtn = document.getElementById("clear");
-const rainbowBtn = document.getElementById("rainbow-btn")
+const rainbowBtn = document.getElementById("rainbow-btn");
+const colorPicker = document.getElementById("color-picker")
 // let colorRGB = "#B04C4C"  
-let colorRGB = randomColorGenerator();
+let defaultColorRGB = "black";
 let numberOfGrids = 20;
 
 function randomColorGenerator(){
@@ -62,12 +63,16 @@ cleanBtn.addEventListener("click", function () {
     })
   });
 
-// rainbowBtn.addEventListener("click, ")
 
-// generateGrid(numberOfGrids)
-changeSquareColor(colorRGB)
+
+colorPicker.addEventListener("input", (event)=>{
+    changeSquareColor(event.target.value)
+})
+
+window.onload = (event) =>{
+    changeSquareColor(defaultColorRGB)
+}
 getGridSize();
 randomColorGenerator();
-console.log(colorRGB)
 
 
