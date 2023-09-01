@@ -85,3 +85,5 @@ randomColorGenerator();
 clearCanvas();
 decisionMaking();
 
+
+//add random note
