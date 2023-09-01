@@ -3,12 +3,6 @@ const cleanBtn = document.getElementById("clear");
 const rainbowBtn = document.getElementById("rainbow-btn");
 const colorPicker = document.getElementById("color-picker")
 
-function init(){
-    window.onload = (event) =>{
-        changeSquareColor("black")
-    }
-}
-
 function randomColorGenerator(){
     let r = Math.floor(Math.random() *256);
     let g = Math.floor(Math.random() *256);
