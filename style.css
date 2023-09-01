@@ -76,3 +76,39 @@
     border: 1px solid black;
     padding: 10px;
 }
+
+.color-picker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid black;
+    width: 100%;
+    padding: 15px;
+}
+
+#color-picker{
+    -webkit-appearance: none;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    width: 75px;
+    height: 75px;
+}
+
+#color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+  }
+
+#color-picker::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+    }
+
+.color-picker > label{
+    font-size: 2rem;
+}
