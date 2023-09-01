@@ -83,4 +83,4 @@ randomColorGenerator();
 clearCanvas();
 userSelectedColor();
 
-
+//add random note
