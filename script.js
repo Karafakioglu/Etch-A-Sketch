@@ -1,7 +1,18 @@
 const gridContainer = document.getElementById("grid-container");
 const cleanBtn = document.getElementById("clear");
-let colorRGB = "#B04C4C"  
+const rainbowBtn = document.getElementById("rainbow-btn")
+// let colorRGB = "#B04C4C"  
+let colorRGB = randomColorGenerator();
 let numberOfGrids = 20;
+
+function randomColorGenerator(){
+    let r = Math.floor(Math.random() *256);
+    let g = Math.floor(Math.random() *256);
+    let b = Math.floor(Math.random() *256);
+    let colorRGB = `rgb(${r},${b},${g})`;
+    // console.log(colorRGB)
+    return colorRGB
+}
 
 function generateGrid(numberOfGrids){
 let squareSize = 700/numberOfGrids;
@@ -32,15 +43,31 @@ function changeSquareColor(colorInput){
     })    
 }
 
-function getSettings(){
-let squares = document.querySelectorAll(".grid-square")
-    cleanBtn.addEventListener("click", function(){
-        squares.forEach(square =>{
-            square.style.backgroundColor = "white"
-        })
+function getGridSize(){
+    const gridSlider = document.getElementById("grid-number-slider");
+    const gridSizeDisplay = document.getElementById("grid-size-display");
+    gridSlider.addEventListener("input", (e) =>{
+        let gridSizeValue = e.target.value
+        gridSizeDisplay.innerText = `${gridSizeValue} X ${gridSizeValue}`
+        gridContainer.innerText = ""; // Clears the canvas before setting a new grid size
+        generateGrid(gridSizeValue);
+        
     })
 }
 
-generateGrid(numberOfGrids)
+cleanBtn.addEventListener("click", function () {
+    let squares = document.querySelectorAll(".grid-square");
+    squares.forEach(square => {
+      square.style.backgroundColor = "white"
+    })
+  });
+
+// rainbowBtn.addEventListener("click, ")
+
+// generateGrid(numberOfGrids)
 changeSquareColor(colorRGB)
-getSettings();
+getGridSize();
+randomColorGenerator();
+console.log(colorRGB)
+
+

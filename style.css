@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     
 }
 #grid-container{
@@ -41,4 +42,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+.rainbow-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+}
+
+.grid-number-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+.clear-div{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
 }
